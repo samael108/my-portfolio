@@ -1,0 +1,388 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: rgba(34, 34, 34, 0.7); /* semi-transparent black */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  /*backdrop-filter: blur(6px); /* 🔥 blur effect 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); */
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+section {
+  margin: 40px 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+/* Project Block */
+.project {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  background: #222;
+  color: #ccc;
+  border-radius: 10px;
+}
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 18px;
+  background: rgba(0, 255, 0, 0.2); /* transparent green */
+  color: #006400; /* darker green for contrast */
+  border: 2px solid #00aa00;
+  border-radius: 10px; /* curved corners */
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#scrollTopBtn:hover {
+  background: rgba(0, 255, 0, 0.4); /* darker on hover */
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+form button {
+  padding: 10px;
+  font-size: 16px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #444;
+}
+
+/* Dark Mode Styles */
+body.dark {
+  background: #111;
+  color: #eee;
+}
+
+body.dark header {
+  background: #000;
+}
+
+body.dark section {
+  background: #1e1e1e;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark footer {
+  background: #000;
+  color: #aaa;
+}
+
+body.dark input,
+body.dark textarea {
+  background: #222;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark form button,
+body.dark #scrollTopBtn {
+  background: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+/* Toggle button style */
+#darkModeToggle {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  padding: 8px 12px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#darkModeToggle:hover {
+  background: #555;
+}
+body.dark .project {
+  background: #2a2a2a;
+  color: #eee;
+  border: 1px solid #444;
+}
+body.dark h2 {
+  color: #fff68f; /* light yellow */
+}
+/* Popup Overlay */
+#popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Popup Box */
+#popupBox {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+#popupBox p {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+#closePopup {
+  padding: 8px 16px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+body.dark #popupBox {
+  background: #1e1e1e;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+body.dark #closePopup {
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+body.dark #closePopup:hover {
+  background: #666;
+}
+#popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px); /* 🔥 This is the magic blur */
+  background: rgba(0, 0, 0, 0.4); /* Slight darkness */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#socialLinks {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social {
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.social:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Color themes for each */
+.github { background: #333; }
+.linkedin { background: #0a66c2; }
+.facebook { background: #1877f2; }
+.twitter { background: #1da1f2; }
+.instagram { background: #e1306c; }
+.youtube { background: #ff0000; }
+
+/* Optional: Dark mode hover tweaks */
+body.dark .social {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#typedText::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Splash Screen Styles */
+#splashScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: opacity 1s ease, transform 1s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animate it out */
+#splashScreen.hide {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+/*@keyframes slideUpFade {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+}*/
+.scroll-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+  filter: blur(10px);
+}
+
+.scroll-section.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.scroll-section.blur-out {
+  opacity: 0.3;
+  transform: scale(0.98);
+  filter: blur(6px);
+}
+.resumeBtn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ffc107; /* 🔥 Bright yellow */
+  color: #222;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+}
+
+.resumeBtn:hover {
+  background: #ffb300; /* slightly deeper yellow */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 193, 7, 0.6);
+}
+body.dark .resumeBtn {
+  background: #ffcc00;
+  color: #111;
+  box-shadow: 0 4px 12px rgba(255, 221, 0, 0.3);
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* pushes it behind everything */
+  pointer-events: none; /* avoids blocking clicks */
+}
+body.dark header {
+  background: rgba(255, 255, 153, 0.2); /* transparent light yellow */
+  color: #fff;
+ /* backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(255, 255, 153, 0.2);*/
+}
