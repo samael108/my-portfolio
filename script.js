@@ -4,10 +4,10 @@ window.addEventListener("load", function () {
 });
 
 // Toggle project details (future expand feature)
-const project = document.querySelector(".project");
+/* const project = document.querySelector(".project");
 project.addEventListener("click", function () {
   alert("You clicked on your project!");
-});
+}); */
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 window.onscroll = function () {
@@ -201,3 +201,70 @@ function loadParticlesForTheme(theme) {
 
   particlesJS("particles-js", config);
 }
+
+const slider = document.getElementById("slider");
+const cards = document.querySelectorAll(".project-card");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+const dotsContainer = document.getElementById("sliderDots");
+
+// Add active class to center-most card
+function updateActiveCard() {
+  const centerX = slider.scrollLeft + slider.offsetWidth / 2;
+
+  cards.forEach((card, i) => {
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+    const isActive = Math.abs(centerX - cardCenter) < card.offsetWidth / 2;
+
+    card.classList.toggle("active", isActive);
+    dotsContainer.children[i]?.classList.toggle("active", isActive);
+  });
+}
+
+// Auto create dots
+function generateDots() {
+  dotsContainer.innerHTML = "";
+  cards.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      slider.scrollTo({
+        left: cards[i].offsetLeft - slider.offsetLeft,
+        behavior: "smooth"
+      });
+    });
+    dotsContainer.appendChild(dot);
+  });
+}
+
+// Button click handlers
+nextBtn.addEventListener("click", () => {
+  slider.scrollBy({ left: slider.clientWidth * 0.8, behavior: "smooth" });
+});
+
+prevBtn.addEventListener("click", () => {
+  slider.scrollBy({ left: -slider.clientWidth * 0.8, behavior: "smooth" });
+});
+
+// Scroll events
+slider.addEventListener("scroll", updateActiveCard);
+window.addEventListener("load", () => {
+  generateDots();
+  updateActiveCard();
+  autoScrollLoop();
+});
+let currentIndex = 0;
+let autoScrollInterval;
+
+function autoScrollLoop() {
+  autoScrollInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % cards.length;
+
+    const nextCard = cards[currentIndex];
+    slider.scrollTo({
+      left: nextCard.offsetLeft - slider.offsetLeft,
+      behavior: "smooth"
+    });
+
+    updateActiveCard(); // Ensure correct dot + card highlighting
+  }, 4000); // Change every 4 seconds
+                                          }
