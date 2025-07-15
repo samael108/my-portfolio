@@ -79,18 +79,15 @@ footer {
   right: 20px;
   padding: 10px 15px;
   font-size: 18px;
-  background: rgba(0, 255, 0, 0.2); /* transparent green */
-  color: #006400; /* darker green for contrast */
-  border: 2px solid #00aa00;
+  background: #444;
+  color: #fff;
+  border-color: #666;
   border-radius: 10px; /* curved corners */
   cursor: pointer;
   display: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-#scrollTopBtn:hover {
-  background: rgba(0, 255, 0, 0.4); /* darker on hover */
-}
 form {
   display: flex;
   flex-direction: column;
@@ -147,11 +144,6 @@ body.dark textarea {
 }
 
 body.dark form button,
-body.dark #scrollTopBtn {
-  background: #444;
-  color: #fff;
-  border-color: #666;
-}
 
 /* Toggle button style */
 #darkModeToggle {
