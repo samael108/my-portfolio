@@ -82,12 +82,16 @@ footer {
   background: #444;
   color: #fff;
   border-color: #666;
+  border: 2px solid;
   border-radius: 10px; /* curved corners */
   cursor: pointer;
   display: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+/*#scrollTopBtn:hover {
+  background: rgba(0, 255, 0, 0.4);  darker on hover 
+}*/
 form {
   display: flex;
   flex-direction: column;
@@ -144,6 +148,11 @@ body.dark textarea {
 }
 
 body.dark form button,
+/*body.dark #scrollTopBtn {
+  background: #444;
+  color: #fff;
+  border-color: #666;
+}*/
 
 /* Toggle button style */
 #darkModeToggle {
@@ -435,10 +444,6 @@ body.dark header {
   object-fit: contain;
   border-radius: 10px;
   margin-bottom: 10px;
-  border: 2px solid #ddd;
-  padding: 4px;
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .project-btn {
@@ -520,3 +525,37 @@ body.dark .dots span {
 body.dark .dots span.active {
   background: #f5e663;
 }
+/* Tech Stack */
+#tech-stack {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px; /* Smaller spacing */
+  flex-wrap: wrap; /* Wrap to next line on small screens */
+}
+
+.tech-icons > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28px; /* Slightly smaller */
+  color: #444;
+  transition: transform 0.3s ease, color 0.3s ease;
+  width: 60px; /* Fixed size to align neatly */
+}
+
+.tech-icons > div:hover {
+  transform: scale(1.1);
+  color: #ffcc00;
+}
+
+.tech-icons p {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #666;
+  }
