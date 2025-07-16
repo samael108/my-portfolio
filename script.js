@@ -3,11 +3,6 @@ window.addEventListener("load", function () {
   console.log("Portfolio Loaded Successfully!");
 });
 
-// Toggle project details (future expand feature)
-/* const project = document.querySelector(".project");
-project.addEventListener("click", function () {
-  alert("You clicked on your project!");
-}); */
 const scrollBtn = document.getElementById("scrollTopBtn");
 
 window.onscroll = function () {
@@ -267,4 +262,4 @@ function autoScrollLoop() {
 
     updateActiveCard(); // Ensure correct dot + card highlighting
   }, 4000); // Change every 4 seconds
-                                          }
+}
